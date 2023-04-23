@@ -1,3 +1,6 @@
+--turn off foreign key checks
+SET FOREIGN_KEY_CHECKS=0;
+
 -- Insert departments
 INSERT INTO department (name)
 VALUES ('Sales'), ('Engineering'), ('Marketing');
@@ -19,3 +22,6 @@ VALUES
     ('Bob', 'Smith', 3, 4),
     ('Alice', 'Johnson', 4, NULL),
     ('Tom', 'Lee', 5, NULL);
+
+--turn on foreign key checks
+SET FOREIGN_KEY_CHECKS=1;
