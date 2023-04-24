@@ -175,13 +175,18 @@ function addDepartment() {
         name: "managerId"
       }
     ]).then(function(answer) {
-      const query = "INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES (?, ?, ?, ?)";
-      connection.query(query, [answer.firstName, answer.lastName, answer.roleId, answer.managerId], function(err, res) {
-        if (err) throw err;
-        console.log(res.affectedRows + " employee added!\n");
-        start();
+        const query = "INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES (?, ?, ?, ?)";
+        
+        // Convert managerId to an integer if it's not null
+        const managerId = answer.managerId === 'null' ? null : parseInt(answer.managerId);
+      
+        connection.query(query, [answer.firstName, answer.lastName, answer.roleId, managerId], function(err, res) {
+          if (err) throw err;
+          console.log(res.affectedRows + " employee added!\n");
+          start();
+        });
       });
-    });
+      
   }
   
     function updateEmployeeRole() {

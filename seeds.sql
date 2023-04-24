@@ -1,4 +1,3 @@
---turn off foreign key checks
 SET FOREIGN_KEY_CHECKS=0;
 
 -- Insert departments
