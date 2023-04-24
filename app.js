@@ -16,6 +16,7 @@ connection.connect((err) => {
   start();
 });
 
+// start app
 function start() {
   inquirer
     .prompt({
@@ -70,6 +71,7 @@ function start() {
     });
 }
 
+// function for viewing all departments
 function viewAllDepartments() {
   connection.query('SELECT * FROM department', (err, res) => {
     if (err) throw err;
@@ -78,6 +80,7 @@ function viewAllDepartments() {
   });
 }
 
+// function for viewing all roles
 function viewAllRoles() {
     const sql = `SELECT * FROM role`;
   
@@ -89,7 +92,7 @@ function viewAllRoles() {
   }
 
   
-
+// function for viewing all employees
   function viewAllEmployees() {
     const sql = "SELECT * FROM employee";
   
@@ -101,7 +104,7 @@ function viewAllRoles() {
   }
   
   
-
+// function for adding a department
 function addDepartment() {
     inquirer
       .prompt([
@@ -121,7 +124,7 @@ function addDepartment() {
       });
   }
   
-
+// function for adding a role
   function addRole() {
     inquirer
       .prompt([
@@ -151,7 +154,7 @@ function addDepartment() {
       });
   }
   
-  
+//function for adding an employee      
   function addEmployee() {
     inquirer.prompt([
       {
@@ -174,6 +177,7 @@ function addDepartment() {
         message: "Enter the employee's manager ID (if applicable):",
         name: "managerId"
       }
+    // promise to add employee to database
     ]).then(function(answer) {
         const query = "INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES (?, ?, ?, ?)";
         
