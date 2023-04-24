@@ -42,7 +42,9 @@ Exit: close the app.
 - MySQL2 integration: the application uses the MySQL2 library to interact with a MySQL database, allowing for efficient and reliable data storage.
 - Modular code structure: the code is organized into separate files and functions for improved readability and maintainability.
 - Asynchronous code: the application uses asynchronous functions and promises to prevent blocking and improve performance.
-- Error handling: the application includes error handling to prevent crashes and provide helpful error messages to the user.
+- Error handling: the application includes error handling to prevent crashes and provide helpful error messages to the user. 
+- Walkthrough video [Video](https://user-images.githubusercontent.com/118683737/233877038-95593570-6667-4964-9b91-903c104eb2f9.webm)
+
 
 ## Contributing
 
